@@ -5,7 +5,7 @@ import Box from './Box';
 import HTML from './tools/HTML.svg'
 import CSS from './tools/CSS.svg'
 import Sass from './tools/Sass.svg'
-import PureCSS from './tools/PureCSS.svg'
+import PureCSS from './tools/pureCSS.svg'
 import Javascript from './tools/Javascript.svg'
 import react from './tools/react.svg'
 import NodeJS from './tools/NodeJS.svg'
