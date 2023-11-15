@@ -61,8 +61,9 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
             <form action="https://formspree.io/f/xjvqdwpy" className='contact__form' ref={formRef} method='POST'>
                 <h1 className='contact__form__title'>Contact</h1>
                 <div className='contact__form__email'>
-                    <label htmlFor='email'>Votre email: (format exemple@exemple.com)</label>
+                    <label htmlFor='email'>Votre email:</label>
                     <input 
+                        placeholder='melody@exemple.com'
                         id='email'
                         type="email" 
                         name="email" 
@@ -70,21 +71,23 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
                         onChange={(e) => {setEmail(e.target.value), resetErrors()}}
                         aria-required="true"
                         aria-invalid={errorEmail ? true : null}
-                        aria-describedby={errorEmail ? 'errorEmail' : null}
+                        aria-describedby={errorEmail ? 'errorEmail' : 'emailFormat'}
                     />
                 </div>
-                {errorEmail && <p id="errorEmail" className='contact__form__error'>Veuillez renseigner une adresse email valide</p>}
+                <p className='sr-only' id='emailFormat'>format exemple@exemple.com</p>
+                {errorEmail && <p id="errorEmail" className='contact__form__error'>Veuillez renseigner une adresse email valide au format exemple@exemple.com</p>}
                 <div className='contact__form__message'>
-                    <label>Votre message: (1000 caractères maximum)</label>
+                    <label>Votre message:</label>
                     <textarea 
                     name="message" 
                     ref={messageRef} 
                     onChange={(e) => {setMessage(e.target.value), resetErrors()}}
                     aria-required="true"
                     aria-invalid={errorMessage || errorEmpty ? true : null}
-                    aria-describedby={errorMessage ? 'errorMessage' : errorEmpty ? 'errorEmpty' : null}
+                    aria-describedby={errorMessage ? 'errorMessage' : errorEmpty ? 'errorEmpty' : 'msgFormat'}
                     />
                 </div>
+                <p className='sr-only' id='msgFormat'>1000 caractères maximum</p>
                 {errorMessage && <p id="errorMessage" className='contact__form__error'>Veuillez renseigner un message de moins de 1000 caractères</p>}
                 {errorEmpty && <p id="errorEmpty" className='contact__form__error'>Veuillez renseigner tous les champs</p>}
 

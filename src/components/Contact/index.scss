@@ -4,12 +4,15 @@
 
 .contact {
     width: 100%;
-    height: 92vh;
+    height: 75vh;
     display: flex;
     margin: auto;
     align-items: center;
     justify-content: center;
 
+    @include tablet {
+        height: 75vh;
+    }
     &__form {
         background-color: $dark-text;
         padding: 1rem;
@@ -112,4 +115,12 @@
         opacity: 1;
         transform: translateX(0) translateY(0);
     }
+}
+
+.sr-only {
+    height: px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -100000000rem;
+    width: 0px !important;
 }

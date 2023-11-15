@@ -10,12 +10,13 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin: 5rem 5rem;
+        margin: 3rem 5rem;
         padding: 0 1rem;
         align-items: center;
         gap: 2rem;
     
         @include tablet {
+            margin: 0rem 5rem;
             justify-content:start;
         }
         &__arrow {
@@ -56,21 +57,28 @@
 
         &__text {
             display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
             background-color: $secondary-color;
             border-radius: 150px 150px 0 0;
             padding: 5rem 1.5rem;
-            line-height: 1.8rem;
+            line-height: 1.9rem;
             color: $dark-text;
             width: 80%;
             margin: auto;
             font-size: 1.5rem;
             text-align: center;
+            
+            &__line {
+                padding-bottom: 1rem;
+                border-bottom: 3px solid $dark-text;
+            }
 
             @include tablet  {
                 padding: 4rem;
                 text-align: start;
                 position: absolute;
-                bottom: auto;
+                bottom: 10%;
                 right: 0;
                 border-radius: 150px 0 0 150px;
                 margin: 0rem 0;

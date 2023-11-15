@@ -13,19 +13,19 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
         {
           title: 'Search By Town',
           image: SearchByTown,
-          text: `Le projet Search By Town a été réalisé dans le cadre de ma formation O\'Clock. Développée en react, l\'application est une recherche de ville par nom avec deux API, une pour donner la météo et l\'autre pour donner le nombre d\'habitants.      ${String.fromCharCode(8594)}`, 
+          text: `Réalisé dans le cadre de ma formation O\'Clock. Développée en React, l\'application est une recherche de ville par nom avec deux API, une pour donner la météo et l\'autre pour donner le nombre d\'habitants.      ${String.fromCharCode(8594)}`, 
           link:'https://search-town.vercel.app/'
         },
         {
             title: 'WordMap',
             image: map,
-            text: `Le projet WordMap a été réalisé dans le but de mettre en pratique mon apprentissage sur les bases de données, les views et comme défi personnel de travailler de manière interactive avec des svg.      ${String.fromCharCode(8594)}`,
+            text: `Réalisé dans le but de mettre en pratique mon apprentissage sur les bases de données, les views et comme défi personnel de travailler de manière interactive avec des svg.      ${String.fromCharCode(8594)}`,
             link:'https://github.com/Melegrand/wordMap'
           },
           {
             title: 'Univinfo',
             image: univinfo,
-            text: 'Le projet Univinfo a été réalisé dans le cadre du projet tutoré de ma formation O\'clock. Il s\'agit d\'un ERP d\'envoi de campagnes de mails.',
+            text: 'Réalisé dans le cadre du projet tutoré de ma formation O\'clock. Il s\'agit d\'un ERP d\'envoi de campagnes de mails.',
             link:'https://github.com/O-clock-DWA-Qilin/Univinfo'
           },
           {
