@@ -13,7 +13,7 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
         {
           title: 'Search By Town',
           image: SearchByTown,
-          text: `Réalisé dans le cadre de ma formation O\'Clock. Développée en React, l\'application est une recherche de ville par nom avec deux API, une pour donner la météo et l\'autre pour donner le nombre d\'habitants.      ${String.fromCharCode(8594)}`, 
+          text: `Réalisée dans le cadre de ma formation O\'Clock et développée en React, l\'application est une recherche de ville par nom avec deux API, une pour donner la météo et l\'autre pour donner le nombre d\'habitants.      ${String.fromCharCode(8594)}`, 
           link:'https://search-town.vercel.app/'
         },
         {
