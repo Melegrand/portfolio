@@ -9,7 +9,7 @@ const About = ({getLocation, location, handleChangeLocation}) => {
         <Header getLocation={getLocation} location={location} handleChangeLocation={handleChangeLocation}/>
         <section className="about">
             <div class="about__header">
-                <img src={arrow} className='slide-in'/>
+                <img src={arrow} className='slide-in about__header__arrow'/>
                 <h1 class='about__header__title'>&Agrave; propos</h1>
             </div>
             <div class="about__content">

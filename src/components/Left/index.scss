@@ -82,6 +82,7 @@
     text-align: center;
     opacity: 0; 
     animation: fadeIn 1s forwards 1s;
+    padding: 1.5rem;
 
     @include small_tablet {
         font-size: 2.5rem;
