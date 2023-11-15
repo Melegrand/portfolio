@@ -1,0 +1,52 @@
+@import '../vars.scss';
+@import '../mixin.scss';
+.notFound {
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(4);
+        &:nth-child(1) {
+            z-index: 2;
+            fill: $primary-color;
+            animation: move 1s 2s ease-out forwards;
+        }
+        &:nth-child(2) {
+            z-index: 1;
+            left: 50%;
+            animation: fillLetter 1s 2s ease-out forwards;
+        }
+    }
+    p {
+        position: absolute;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        -webkit-text-stroke: 4px $secondary-color;
+        text-stroke: 4px $secondary-color;
+        text-align: center;
+        width: 100%;
+        color: transparent;
+        letter-spacing: 0.5rem;
+        top: 25%;
+        font-size: 6rem;
+    }
+}
+@keyframes strokeLetter {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fillLetter {
+    from {
+        stroke: 0;
+    }
+    to {
+        stroke: 2px;
+        fill: $primary-color;
+        transform: translate(-50%, -50%) scale(4);
+    }
+}
+@keyframes move {
+    to {
+        transform: translate(-60%, -50%) scale(4);
+    }
+}

@@ -1,0 +1,13 @@
+@import '../vars.scss';
+@import '../mixin.scss';
+
+.home {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: $primary-color;
+
+    @include big {
+        flex-direction: row;
+        height: 100vh;
+    }
+}

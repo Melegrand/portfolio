@@ -1,0 +1,199 @@
+@import '../vars.scss';
+@import '../mixin.scss';
+
+.navigation {
+    background-color: $primary-color;
+
+    @include big {
+    padding-bottom: 8%;
+
+    }
+
+    &__container {
+        display: none;
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: $primary-color;
+        position: relative;
+
+        @include big {
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            position: absolute;
+            right:0;
+            padding: 1rem 0;
+
+        }
+
+        &__list {
+            width: 100%;
+            background-color: $primary-color;
+            
+            @include big {
+                display: flex;
+                width: 100%;;
+                justify-content: right;
+            }
+
+            &__element {
+                display: flex;
+                align-items: center;
+                padding: 1.5rem 1rem;
+                border-left: 1px solid $secondary-color;
+                text-decoration: none;
+                border-bottom: 1px solid $dark-text;
+                text-align: center;
+                color: $dark-text;
+                font-size: 1.75rem;
+
+                @include big {
+                    border-bottom: none;
+                    padding: 1rem;
+                    font-size: 1rem;
+                }
+
+                &__link {
+                    text-decoration: none;
+                    color: $dark-text;
+                    font-size: 1rem;
+
+                    @include big {
+                        font-size: 1.3rem;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
+                &__networks {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3rem;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    padding: 1.8rem;
+                    margin: auto;
+
+                    @include big {
+                        background: linear-gradient(to right,#ffb05b, #fbff26);
+                        border-radius: 0 50px 0 50px;
+                        flex-direction: row;
+                        padding: 0 1rem;
+                        margin-left: 1rem;
+                        gap: 1rem;
+                        width: 100px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.container--home {
+    position: absolute;
+    width: 70%;
+    right: 0;
+}
+.expanded {
+    display:flex;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.evitement {
+    position: absolute;
+    left: -10000000000rem;
+}
+
+.evitement:focus {
+    position: static;
+    color: $primary-color;
+}
+
+.img {
+    width: 50%;
+
+    @include big {
+        width: 100%;
+    }
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    width: 75px;
+    height: 75px;
+    transition: transform 0.5s;
+    border: none;
+    background-color: transparent;
+    transition-duration: 1s;
+    @include big {
+        display: none;
+    }
+}
+.icon span{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition-duration: 1s;
+}
+.icon span, .icon span::before, .icon span::after{
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: $dark-text;
+    transition-duration: 1s;
+}
+.icon span::before, .icon span::after{
+    content: "";
+    top: 0;
+    left: 0;
+    transform-origin: 50% 50%;
+    transition: transform 0.5s;
+}
+.icon span::before{
+    transform: translateY(-11px);
+}
+.icon span::after{
+    transform: translateY(11px);
+}
+.icon:hover span::before{
+    transform: translateY(-11px);
+}
+.icon:hover span::after{
+    transform: translateY(11px);
+
+}
+
+.svg{
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: $dark-text;
+    stroke-dasharray: 151;
+    stroke-dashoffset: 151;
+    transition: stroke-dashoffset 0s;
+    transition-duration: 1s;
+}
+
+.icon.is-opened{
+    transform: rotate(180deg);
+}
+.icon.is-opened span{
+    background-color: transparent;
+    transition-duration: 0s;
+}
+.icon.is-opened span::before{
+    transform: translateY(0) rotate(45deg);
+}
+.icon.is-opened span::after{
+    transform: translateY(0) rotate(-45deg);
+}
+.icon.is-opened svg{
+    transform: rotate(-180deg);
+    transition-duration: 1s;
+    stroke-dashoffset: 0;
+}

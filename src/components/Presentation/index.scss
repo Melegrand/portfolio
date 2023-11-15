@@ -1,0 +1,63 @@
+@import '../vars.scss';
+@import '../mixin.scss';
+
+.presentation {
+    background-color: $primary-color;
+    display: none;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    color: $dark-text;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0; 
+    animation: fadeIn 1s forwards 1s; 
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    
+    @include big {
+        margin-top: 4rem;
+        display: flex;
+        font-size: 3rem;
+        margin-top: 10rem;
+        height: 70vh;
+    }
+
+    &__name {
+        font-size: 3rem;
+
+        @include small_tablet {
+            font-size: 3.5rem;
+        }
+
+        @include big {
+            font-size: 5rem;
+        }
+    }
+
+    &__title {
+        margin: auto;
+
+        @include small_tablet {
+            width: 80%;
+        }
+
+        @include big {
+            width: 100%;
+        }
+    }
+
+    &__mouse {
+        width: 100%;
+        padding: 0 0 3rem 0;
+
+        @include big {
+            padding: 0;
+        }
+    }
+}
