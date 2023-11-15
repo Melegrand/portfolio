@@ -31,7 +31,6 @@ const App = () => {
                   <Route path="/skills" element={<Skills getLocation={getLocation} location={location} handleChangeLocation={handleChangeLocation}/>} />
                   <Route path="/portfolio" element={<Portfolio getLocation={getLocation} location={location} handleChangeLocation={handleChangeLocation}/>} />
                   <Route path="/contact" element={<Contact getLocation={getLocation} location={location} handleChangeLocation={handleChangeLocation}/>} />
-                  <Route path="/plan" element={<Sitemap location={location} handleChangeLocation={handleChangeLocation}/>}/>
                   <Route path="*" element={<NotFound/>} />
               </Routes>
         </Router>
