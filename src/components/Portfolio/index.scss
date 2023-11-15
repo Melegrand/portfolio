@@ -49,7 +49,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            padding: 2rem 2rem;;
+            padding: 2rem 2rem;
             width: 100%;
 
             @include very_big {
@@ -62,7 +62,7 @@
             border: 7px solid $dark-text;
             text-decoration: none;
             color: $primary-color;
-            padding: 2rem;
+            padding: 2rem 0.2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -75,6 +75,7 @@
             @include tablet {
                 width: 100%;
                 height: 35rem;
+                padding: 2rem;
             }
 
             &__content {

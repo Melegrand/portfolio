@@ -48,10 +48,11 @@
             background-color: $secondary-color;
             border-radius: 150px 150px 0 0;
             padding: 4rem;
-            line-height: 1.5rem;
+            line-height: 1.8rem;
             color: $dark-text;
             width: 70%;
             margin: auto;
+            font-size: 1.5rem;
 
             @include tablet  {
                 position: absolute;

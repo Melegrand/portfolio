@@ -29,11 +29,11 @@
         margin: auto;
         align-items: center;
         gap: 2rem;
-        width: 55%;
+        width: 60%;
 
         
         @include small {
-            width: 65%;
+            width: 75%;
         }
 
         @include mid {
