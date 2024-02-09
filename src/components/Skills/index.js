@@ -19,6 +19,9 @@ import github from './tools/github.svg'
 import canva from './tools/canva.svg'
 import appache from './tools/appache.svg'
 import npm from './tools/npm.svg'
+import python from './tools/python.png'
+import dynamoDB from './tools/dynamoDB.svg'
+import tailwind from './tools/tailwind.png'
 
 const Skills = ({getLocation, location, handleChangeLocation}) => {
     document.title = 'Compétences | Mélody Legrand'
@@ -28,14 +31,17 @@ const Skills = ({getLocation, location, handleChangeLocation}) => {
         {name:'CSS', src:CSS},
         {name:'Sass', src:Sass},
         {name:'PureCSS', src:PureCSS},
+        {name:'Tailwind', src:tailwind},
         {name:'Javascript', src:Javascript},
         {name:'React', src:react}]
 
     const Back= [{name:'NodeJS', src:NodeJS},
-                 {name:'ExpressJS', src:ExpressJS}];
+                 {name:'ExpressJS', src:ExpressJS},
+                 {name:'Python', src:python}];
 
     const BDD= [{name:'Sequelize', src:Sequelize}, 
                 {name:'PostgresSQL', src: PostgresSQL},
+                {name:'DynamoDB', src: dynamoDB},
                 {name:'SQL', src: sql}];
 
     const env= [{name:'Github', src:github}, 
