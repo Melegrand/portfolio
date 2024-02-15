@@ -17,16 +17,16 @@ const Project = ({ data }) => {
     return (
         <div className="portfolio__project">
             <div className="portfolio__project__buttons">
-                <button className="prev-button" onClick={handlePrev} disabled={currentIndex === 0}>
+                <button className="prev-button button--nav" onClick={handlePrev} disabled={currentIndex === 0}>
                     &lsaquo;
                 </button>
 
-                <button className="next-button" onClick={handleNext} disabled={currentIndex === data.length - 1}>
+                <button className="next-buttonbutton--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>
                     &rsaquo;
                 </button>
             </div>
             <div className="portfolio__project__buttons--prev">
-                <button className="prev-button" onClick={handlePrev} disabled={currentIndex === 0}>
+                <button className="prev-button button--nav" onClick={handlePrev} disabled={currentIndex === 0}>
                     &lsaquo;
                 </button>
             </div>
@@ -40,22 +40,22 @@ const Project = ({ data }) => {
                         <div className="portfolio__project__link__content__container__desc">
                             <p className="portfolio__project__link__content__container__desc__element">{currentProject.text}</p>
                             <div className={`portfolio__project__link__content__container__desc__link${currentProject.link === '' || currentProject.live === '' ? '--one' : '--many'}`}>
-                                {currentProject.link !== '' && <a href={currentProject.link} className={`portfolio__project__link__content__container__desc__link${currentProject.link === '' || currentProject.live === '' ? '--one' : '--many'}__element`}>Repository Github</a>}
-                                {currentProject.live !== '' && <a href={currentProject.live} className={`portfolio__project__link__content__container__desc__link${currentProject.link === '' || currentProject.live === '' ? '--one' : '--many'}__element`}>Site en ligne</a>}
+                                {currentProject.link !== '' && <a href={currentProject.link} className={`portfolio__project__link__content__container__desc__link__container${currentProject.link === '' || currentProject.live === '' ? '--one' : '--many'}__element`}>Repository Github</a>}
+                                {currentProject.live !== '' && <a href={currentProject.live} className={`portfolio__project__link__content__container__desc__link__container${currentProject.link === '' || currentProject.live === '' ? '--one' : '--many'}__element`}>Site en ligne</a>}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="portfolio__project__link__number">
                     {data.map((project, index) => (
-                        <p className={`portfolio__project__link__number__element ${currentIndex === index ? 'active' : ''}`}></p>
+                       <button key={index} className='portfolio__project__link__number__btn'><p onClick={() => setCurrentIndex(index)} className={`portfolio__project__link__number__element ${currentIndex === index ? 'active' : ''}`}></p></button>
                     ))}
                     <p className="portfolio__project__link__number__element--mobile">{currentIndex + 1} / {data.length}</p>
                 </div>
 
             </div>
             <div className="portfolio__project__buttons--next">
-                <button className="next-button" onClick={handleNext} disabled={currentIndex === data.length - 1}>
+                <button className="next-button button--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>
                     &rsaquo;
                 </button>
             </div>

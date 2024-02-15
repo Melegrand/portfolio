@@ -59,7 +59,7 @@ const Skills = ({getLocation, location, handleChangeLocation}) => {
     return (
         <>
         <Header getLocation={getLocation} location={location} handleChangeLocation={handleChangeLocation}/>
-        <section className="about">
+        <section className="skills">
         <h1 className='skills__header__title'>Mes compétences</h1>
             <div className="skills__container">
                 <Box title='Front-end' data={Front}/>

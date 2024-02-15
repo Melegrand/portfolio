@@ -9,6 +9,7 @@
     margin: auto;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     @include tablet {
         height: 75vh;
@@ -25,7 +26,7 @@
         gap: 2rem;
         color: $primary-color;
         -webkit-box-shadow: 16px 16px 0px 2px #FDD443; 
-        box-shadow: 16px 16px 0px 2px #FDD443;
+        box-shadow: 16px 16px 0px 2px $secondary-color;
 
         @include small {
             width: 80%;

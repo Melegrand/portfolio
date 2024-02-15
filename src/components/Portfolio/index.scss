@@ -12,7 +12,6 @@
 
     @include very_big {
         flex-direction: row;
-        padding: 2rem;
     }
 
     &__header {
@@ -35,7 +34,7 @@
         &__title {
             color: $dark-text;
             font-size: 3rem;
-            text-shadow: 3px 5px 2px #474747, 2px 2px 2px rgba(0,66,121,0), 9px 9px 0px rgba(253,212,67,0.55);
+            text-shadow: 0.2rem 0.2rem 0px $secondary-color;
 
             @include small_tablet {
                 font-size: 4.5rem;
@@ -102,16 +101,19 @@
             &__content {
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1.5rem;
+                // padding-bottom: 3rem;;
 
                 &__title {
                     font-size: 2rem;
                     text-align: center;
                     border-top: 4px solid $secondary-color;
                     border-left: 4px solid $secondary-color;
+                    border-radius: 15px;
                     line-height: 140%;
                     margin: auto;
                     padding: 1rem;
+                    font-weight: 700;
 
                     @include tablet {
                         font-size: 3rem;
@@ -123,12 +125,12 @@
                     display: flex;
                     flex-direction: column;
 
-                    gap: 3rem;
+                    gap: 2.5rem;
                     padding: 0 2rem;
 
                     @include tablet {
                         flex-direction: row;
-                        padding: 2rem;
+                        padding: 1rem;
                     }
 
                     &__img {
@@ -157,7 +159,7 @@
                         align-items: center;
                         max-width: 100%;
                         text-align: center;
-                        gap: 3rem;
+                        gap: 2.5rem;
 
                         @include tablet {
                             max-width: 60%;
@@ -177,36 +179,10 @@
                         }
 
                         &__link {
-                            &--many, &--one {       
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                width: 60%;
-                                gap: 2rem;
-                                margin-bottom: 3rem;
-
-                                @include tablet {
-                                    flex-direction: row;
-                                    justify-content: space-between;
-                                    margin-bottom: 0;
-                                    gap: 1rem;
-                                }
-
-                                &__element {
-                                    font-size: 1.25rem;
-                                    text-decoration: underline;
-                                    text-underline-offset: 0.5rem;
-                                    color: $primary-color;
-                                    line-height: 150%;
-
-                                    &:hover {
-                                        text-decoration: underline $secondary-color;
-                                    }
-
-                                }
-
-                            }
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 3rem;
+                            
                             &--many {
                                 @include tablet {
                                     justify-content: space-between;
@@ -218,6 +194,61 @@
                                     justify-content: center;
                                 }
                             }
+
+                            
+                            &--many, &--one {       
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin-bottom: 2rem;
+                                // width: 60%;
+                                gap: 2rem;
+
+                                @include tablet {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    margin-bottom: 0;
+                                }
+
+                            }
+                            &__container {
+
+                                &--many, &--one {       
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    // width: 60%;
+                                    gap: 2rem;
+
+                                    @include tablet {
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        margin-bottom: 0;
+                                    }
+
+                                    &__element {
+                                        // z-index: -1;
+                                        font-size: 1.25rem;
+                                        text-decoration: none;
+                                        border-radius: 15px;
+                                        padding: 0.2rem 1rem;
+                                        color: $dark-text;
+                                        line-height: 150%;
+                                        font-weight: 700;
+                                        background: linear-gradient(to left, $secondary-color, $primary-color);
+                                        // margin-bottom: 3rem;
+                                        text-align: center;
+
+                                        &:hover {
+                                            background: $primary-color;
+                                            color: $dark-text;
+                                        }
+                                    }
+
+                                }
+                            }
                         }
                     }
                 }
@@ -226,10 +257,19 @@
             &__number {
                 position: absolute;
                 bottom: 1rem;
-                gap: 1rem;
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
 
+                &__btn {
+                    background: none;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    font: inherit;
+                    color: inherit;
+                    cursor: pointer;
+                }
                 &__element {
                     width: 10px;
                     height: 10px;
@@ -237,6 +277,7 @@
                     background-color: #ccc;
                     margin: 0 5px;
                     transition: background-color 0.3s ease;
+                    margin: 0 0.75rem;
                     display: none;
 
                     @include tablet {
@@ -262,7 +303,7 @@
             @include tablet {
                 content: '';
                 position: absolute;
-                bottom: -20;
+                bottom: -55;
                 left: 50%;
                 transform: translateX(-50%);
                 border-width: 100px;
@@ -273,7 +314,7 @@
         }
     }
 
-    button {
+    .button--nav {
         background: none;
         border: none;
         font-size: 10em;

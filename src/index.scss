@@ -56,7 +56,9 @@ html {
 
 .currentPage {
 	transition-duration: 0s;
-	border-bottom: 3px solid $secondary-color
+	text-decoration: underline $secondary-color 4px;
+	text-underline-offset: 0.8rem;
+
 }
 
 html {

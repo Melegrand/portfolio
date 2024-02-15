@@ -17,7 +17,7 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
         {
           title: 'Univinfo',
           image: univinfo,
-          text: 'Créé dans le cadre du projet tutoré de ma formation chez O\'Clock, cet ERP dédié à l\'envoi de campagnes de mails a été conçu pour être entièrement accessible. Il permet de gérer les campagnes avec une vue mensuelle et offre la flexibilité de planifier leur envoi ou de les expédier instantanément.',
+          text: 'Cet ERP dédié à l\'envoi de campagnes de mails a été conçu pour être entièrement accessible. Il permet de gérer les campagnes avec une vue mensuelle et offre la flexibilité de planifier leur envoi ou de les expédier instantanément.',
           link:'https://github.com/O-clock-DWA-Qilin/Univinfo',
           live: ''
         },
@@ -31,7 +31,7 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
         {
           title: 'Search By Town',
           image: SearchByTown,
-          text: `Développée en React, cette application est une recherche de villes par leur nom qui utilise deux API distinctes : l'une pour obtenir les données météorologiques et l'autre pour fournir le nombre d'habitants. Ces données sont ensuite utilisées pour dynamiser une carte représentant la répartition de la population des villes correspondantes.`, 
+          text: `Développée en React, cette application est une recherche de villes par leur nom qui utilise deux API distinctes : l'une pour obtenir les données météorologiques et l'autre pour fournir le nombre d'habitants`, 
           link:'https://github.com/Melegrand/search_town',
           live:'https://search-town.vercel.app/'
         },
@@ -45,14 +45,14 @@ const Portfolio = ({getLocation, location, handleChangeLocation}) => {
         {
           title: 'Elec World',
           image: ew,
-          text: 'Le site Elec World a été réalisé pour répondre aux besoins de l\'entreprise en matière de visibilité sur internet. Développé en HTML, Sass et JavaScript, une attention particulière a été accordée à l\'accessibilité pour assurer une expérience utilisateur optimale.',
+          text: 'Le site Elec World a été réalisé pour répondre aux besoins de l\'entreprise en matière de visibilité sur internet. Développé en HTML, Sass et JavaScript, une attention particulière a été accordée à l\'accessibilité.',
           link:'',
           live:'https://www.elecworld.fr/'
         },
         {
           title: 'Pagination',
           image: pagination,
-          text: 'Ce package simplifie la mise en place d\'une pagination avec React tout en respectant les normes d\'accessibilité. Son déploiement sur npm vise à le rendre accessible à toute la communauté souhaitant bénéficier de cette fonctionnalité.',
+          text: 'Ce package simplifie la mise en place d\'une pagination avec React tout en respectant les normes d\'accessibilité. Son déploiement sur npm vise à le rendre accessible à toute la communauté.',
           link:'https://github.com/Melegrand/react-pagination',
           live:'https://www.npmjs.com/package/react-pagination-accessible'
         },

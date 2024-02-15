@@ -16,6 +16,7 @@
         text-underline-offset: 0.75rem;
         margin: 2rem ;
         color: $dark-text;
+        text-shadow: 0.2rem 0.2rem 0px $secondary-color;
 
         @include big {
             margin: 0;
@@ -42,7 +43,7 @@
 
         @include big {
             flex-direction: row;
-            margin: 3rem auto;
+            margin: 1rem auto;
             width: 90%;
         }
 
