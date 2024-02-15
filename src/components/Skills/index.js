@@ -22,7 +22,7 @@ import npm from './tools/npm.svg'
 import python from './tools/python.png'
 import dynamoDB from './tools/dynamoDB.svg'
 import tailwind from './tools/tailwind.png'
-
+import notion from './tools/notion.png'
 const Skills = ({getLocation, location, handleChangeLocation}) => {
     document.title = 'Compétences | Mélody Legrand'
 
@@ -49,7 +49,8 @@ const Skills = ({getLocation, location, handleChangeLocation}) => {
     {name:'Docker', src: docker},
     {name:'Appache', src: appache},
     {name:'Canva', src: canva},
-    {name:'Npm', src: npm}];
+    {name:'Npm', src: npm},
+    {name:'Notion', src: notion}];
 
     useEffect(() => {
         handleChangeLocation()
@@ -64,7 +65,7 @@ const Skills = ({getLocation, location, handleChangeLocation}) => {
                 <Box title='Front-end' data={Front}/>
                 <Box title='Back-end' data={Back}/>
                 <Box title='Base de données' data={BDD}/>
-                <Box title='Environnement' data={env}/>
+                <Box title='Environnement et outils' data={env}/>
             </div>
         </section>
         </>

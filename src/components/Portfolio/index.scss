@@ -46,18 +46,39 @@
     &__project {
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
-            padding: 2rem 2rem;
+            // padding: 2rem 2rem;
             width: 100%;
 
+            @include small_tablet {
+                flex-direction: row;
+            }
             @include very_big {
                 width: calc((100% - 350px) - 2rem - 8rem);
             }
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            
+            &--prev, &--next {
+                display: none;
+
+                @include small_tablet {
+                    display: flex
+                }
+            }
+
+            @include small_tablet {
+                display: none
+            }
+        }
 
         &__link {
-            width: 75%;
+            position: relative;
+            width: 90%;
             height: auto;
             border: 7px solid $dark-text;
             text-decoration: none;
@@ -86,9 +107,11 @@
                 &__title {
                     font-size: 2rem;
                     text-align: center;
-                    text-decoration: underline $secondary-color 3px;
-                    text-underline-offset: 8px;
+                    border-top: 4px solid $secondary-color;
+                    border-left: 4px solid $secondary-color;
                     line-height: 140%;
+                    margin: auto;
+                    padding: 1rem;
 
                     @include tablet {
                         font-size: 3rem;
@@ -128,15 +151,19 @@
 
                     &__desc {
                         display: flex;
-                        justify-content: center;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
                         align-items: center;
                         max-width: 100%;
                         text-align: center;
+                        gap: 3rem;
 
                         @include tablet {
                             max-width: 60%;
-                            justify-content: center;
+                            justify-content: space-between;
                             text-align: start;
+                            gap: auto;
                         }
 
                         &__element {
@@ -144,9 +171,87 @@
                             line-height: 2rem;
 
                             @include tablet {
-                                font-size: 2rem;
+                                font-size: 1.5rem;
                                 line-height: 2.5rem;
                             }
+                        }
+
+                        &__link {
+                            &--many, &--one {       
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                width: 60%;
+                                gap: 2rem;
+                                margin-bottom: 3rem;
+
+                                @include tablet {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    margin-bottom: 0;
+                                    gap: 1rem;
+                                }
+
+                                &__element {
+                                    font-size: 1.25rem;
+                                    text-decoration: underline;
+                                    text-underline-offset: 0.5rem;
+                                    color: $primary-color;
+                                    line-height: 150%;
+
+                                    &:hover {
+                                        text-decoration: underline $secondary-color;
+                                    }
+
+                                }
+
+                            }
+                            &--many {
+                                @include tablet {
+                                    justify-content: space-between;
+                                }
+                            }
+    
+                            &--one {
+                                @include tablet {
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__number {
+                position: absolute;
+                bottom: 1rem;
+                gap: 1rem;
+                display: flex;
+                flex-direction: row;
+
+                &__element {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #ccc;
+                    margin: 0 5px;
+                    transition: background-color 0.3s ease;
+                    display: none;
+
+                    @include tablet {
+                        display: block;
+                    }
+
+                    &.active {
+                        background-color: $secondary-color;
+                    }
+
+                    &--mobile {
+                        display: flex;
+
+                        @include tablet {
+                            display: none;
                         }
                     }
                 }
