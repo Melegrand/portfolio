@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lobster&display=swap');
 @import './components/vars.scss';
 
 html, body, div, span, applet, object, iframe,
@@ -55,5 +56,23 @@ html {
 
 .currentPage {
 	transition-duration: 0s;
-	border-bottom: 3px solid $secondary-color
+	text-decoration: underline $secondary-color 4px;
+	text-underline-offset: 0.8rem;
+
 }
+
+html {
+	font-family: 'karla';
+}
+
+h2 {
+	font-family: 'karla';
+	font-weight: 400;	
+}
+
+
+h1 {
+	font-family: 'lobster';
+	font-weight: 400;	
+}
+

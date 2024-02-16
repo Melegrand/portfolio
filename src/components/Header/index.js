@@ -27,6 +27,7 @@ const Header = ({getLocation, location, handleChangeLocation}) => {
         handleChangeLocation()
       }, []);
 
+
     return (
         <>
         <Link to="#main" className="evitement">Passer directement au contenu principal</Link>
@@ -39,15 +40,15 @@ const Header = ({getLocation, location, handleChangeLocation}) => {
             </button>
             <ul className={menuIsExpanded ? "navigation__container expanded" : "navigation__container"} aria-expanded={menuIsExpanded ? true : false}>
                 <div className="navigation__container__list">
-                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/' ? 'page' : null} to="/" className={location === '/' ? "navigation__container__list__element__link currentPage" : "navigation__container__list__element__link"}>Accueil</Link></li>
-                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/about' ? 'page' : null} to="/about" className={location === '/about' ? "navigation__container__list__element__link currentPage" : "navigation__container__list__element__link"}>&Agrave; propos</Link></li>
-                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/skills' ? 'page' : null} to="/skills" className={location === '/skills' ? "navigation__container__list__element__link currentPage" : "navigation__container__list__element__link"}>Compétences</Link></li>
-                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/portfolio' ? 'page' : null} to="/portfolio" className={location === '/portfolio' ? "navigation__container__list__element__link currentPage" : "navigation__container__list__element__link"}>Portfolio</Link></li>
-                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/contact' ? 'page' : null} to="/contact" className={location === '/contact' ? "navigation__container__list__element__link currentPage" : "navigation__container__list__element__link"}>Contact</Link></li>
+                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/' ? 'page' : null} to="/" className={"navigation__container__list__element__link"}><span className={location === '/' && "currentPage"}>Accueil</span></Link></li>
+                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/about' ? 'page' : null} to="/about" className={"navigation__container__list__element__link"}><span className={location === '/about' && "currentPage"}>&Agrave; propos</span></Link></li>
+                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/skills' ? 'page' : null} to="/skills" className={"navigation__container__list__element__link"}><span className={location === '/skills' && "currentPage"}>Skills</span></Link></li>
+                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/portfolio' ? 'page' : null} to="/portfolio" className={"navigation__container__list__element__link"}><span className={location === '/portfolio' && "currentPage"}>Portfolio</span></Link></li>
+                    <li className="navigation__container__list__element"><Link onClick={handleChangeLocation} aria-current={location === '/contact' ? 'page' : null} to="/contact" className={"navigation__container__list__element__link"}><span className={location === '/contact' && "currentPage"}>Contact</span></Link></li>
                     <div className="navigation__container__list__element__networks">
-                        <li className="navigation__container__list__element__networks__link"><a href='https://github.com/Melegrand' className="navigation__container__list__element__link"><img alt='' src={github} className='img'></img></a></li>
-                        <li className="navigation__container__list__element__networks__link"><a href='https://www.linkedin.com/in/melody-legrand-3716a6212/' className="navigation__container__list__element__link"><img alt ='' src={linkedin} className='img'></img></a></li>
-                        <li className="navigation__container__list__element__networks__link"><a href='mailto:dstm.melody@gmail.com' className="navigation__container__list__element__link"><img alt ='' src={email} className='img'></img></a></li>
+                        <li className="navigation__container__list__element__networks__link"><a href='https://github.com/Melegrand' ><img alt='' src={github} className='img'></img></a></li>
+                        <li className="navigation__container__list__element__networks__link"><a href='https://www.linkedin.com/in/melody-legrand-3716a6212/' ><img alt ='' src={linkedin} className='img'></img></a></li>
+                        <li className="navigation__container__list__element__networks__link"><a href='mailto:dstm.melody@gmail.com' ><img alt ='' src={email} className='img'></img></a></li>
                     </div>
                 </div>
             </ul>

@@ -4,7 +4,7 @@
 .about {
     display: flex;
     flex-direction : column;
-    min-height: 100vh;
+    gap: 3rem;
 
     &__header {
         display: flex;
@@ -14,6 +14,7 @@
         padding: 0 1rem;
         align-items: center;
         gap: 2rem;
+        height: 10vh;
     
         @include tablet {
             margin: 0rem 5rem;
@@ -34,7 +35,7 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
             text-align: center;
-
+            text-shadow: 0.2rem 0.2rem 0px $secondary-color;
             @include tablet {
                 text-underline-offset: 1rem;
             }
@@ -49,44 +50,45 @@
     }
 
     &__content {
-        padding: 0 0.5rem;
+        max-height: 80vh;
 
-        @include tablet {
-            padding: 0 2rem;
-        }
+        &__principal {
+            position: relative;
 
-        &__text {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            background-color: $secondary-color;
-            border-radius: 150px 150px 0 0;
-            padding: 5rem 1.5rem;
-            line-height: 1.9rem;
-            color: $dark-text;
-            width: 80%;
-            margin: auto;
-            font-size: 1.5rem;
-            text-align: center;
-            
-            &__line {
-                padding-bottom: 1rem;
-                border-bottom: 3px solid $dark-text;
-            }
-
-            @include tablet  {
-                padding: 4rem;
-                text-align: start;
-                position: absolute;
-                bottom: 10%;
-                right: 0;
-                border-radius: 150px 0 0 150px;
-                margin: 0rem 0;
-                width: 70%;
-                line-height: 2rem;
+            &__text {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                background-color: $secondary-color;
+                border-radius: 150px 150px 0 0;
+                padding: 5rem 1.5rem;
+                line-height: 1.9rem;
+                color: $dark-text;
+                width: 80%;
+                margin: auto;
                 font-size: 1.5rem;
+                text-align: center;
+                
+                &__line {
+                    padding-bottom: 1rem;
+                    border-bottom: 3px solid $dark-text;
+                }
+    
+                @include tablet  {
+                    padding: 4rem;
+                    text-align: start;
+                    position: absolute;
+                    // bottom: 10%;
+                    right: 0;
+                    border-radius: 150px 0 0 150px;
+                    margin: 0rem 0;
+                    width: 70%;
+                    line-height: 2rem;
+                    font-size: 1.5rem;
+                }
             }
         }
+       
     }
     
 }
