@@ -28,6 +28,7 @@ const Project = ({ data }) => {
     
         const handleTouchStart = (event) => {
           startX = event.touches[0].clientX;
+          handleInstruction()
         };
     
         const handleTouchEnd = (event) => {
