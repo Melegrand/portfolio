@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Project = ({ data }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const screenRef = useRef(null);
+    let startX;
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
@@ -14,6 +16,32 @@ const Project = ({ data }) => {
 
     const currentProject = data[currentIndex];
 
+    useEffect(() => {
+        const element = screenRef.current;
+    
+        const handleTouchStart = (event) => {
+          startX = event.touches[0].clientX;
+        };
+    
+        const handleTouchEnd = (event) => {
+          const endX = event.changedTouches[0].clientX;
+          const deltaX = endX - startX;
+    
+          if (deltaX > 50) {
+            handleNext()
+          } else if (deltaX < -50) {
+            handlePrev()
+          }
+        };
+    
+        element.addEventListener('touchstart', handleTouchStart);
+        element.addEventListener('touchend', handleTouchEnd);
+    
+        return () => {
+          element.removeEventListener('touchstart', handleTouchStart);
+          element.removeEventListener('touchend', handleTouchEnd);
+        };
+      }, []); 
     return (
         <div className="portfolio__project">
             <div className="portfolio__project__buttons">
@@ -30,7 +58,7 @@ const Project = ({ data }) => {
                     &lsaquo;
                 </button>
             </div>
-            <div className="portfolio__project__link">
+            <div className="portfolio__project__link" ref={screenRef}>
                 <div className="portfolio__project__link__content">
                     <h2 className="portfolio__project__link__content__title">{currentProject.title}</h2>
                     <div className="portfolio__project__link__content__container">
