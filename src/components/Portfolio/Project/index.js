@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faLight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Project = ({ data }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const screenRef = useRef(null);
+    const instructionRef = useRef(null);
     let startX;
 
     const handleNext = () => {
@@ -14,6 +18,9 @@ const Project = ({ data }) => {
         currentIndex !== data.length && setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
     };
 
+    const handleInstruction = () => {
+        instructionRef.current.style.display = "none";
+    }
     const currentProject = data[currentIndex];
 
     useEffect(() => {
@@ -45,7 +52,7 @@ const Project = ({ data }) => {
       }, []); 
     return (
         <div className="portfolio__project">
-            <div className="portfolio__project__buttons">
+            {/* <div className="portfolio__project__buttons">
                 <button className="prev-button button--nav" onClick={handlePrev} disabled={currentIndex === 0}>
                     &lsaquo;
                 </button>
@@ -53,7 +60,7 @@ const Project = ({ data }) => {
                 <button className="next-button button--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>
                     &rsaquo;
                 </button>
-            </div>
+            </div> */}
             <div className="portfolio__project__buttons--prev">
                 <button className="prev-button button--nav" onClick={handlePrev} disabled={currentIndex === 0}>
                     &lsaquo;
@@ -81,7 +88,15 @@ const Project = ({ data }) => {
                     ))}
                     <p className="portfolio__project__link__number__element--mobile">{currentIndex + 1} / {data.length}</p>
                 </div>
-
+                
+                <div className='portfolio__project__link__instruction' ref={instructionRef}>
+                    <div className='portfolio__project__link__instruction__container'>
+                        <FontAwesomeIcon icon={faHandPointer} style={{color: "#FFD43B"}} className='portfolio__project__link__instruction__container__icon'/>
+                    </div>
+                    <div className='portfolio__project__link__instruction__text'>
+                        <button className='portfolio__project__link__instruction__text__btn' onClick={handleInstruction}><FontAwesomeIcon icon={faCircleXmark} className='portfolio__project__link__instruction__text__icon'/></button>
+                    </div>
+                </div>
             </div>
             <div className="portfolio__project__buttons--next">
                 <button className="next-button button--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>

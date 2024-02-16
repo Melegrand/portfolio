@@ -16,8 +16,8 @@
 
     &__header {
         display: flex;
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%; 
         border-bottom: 20px solid $secondary-color;
         border-right: 20px solid $secondary-color; 
@@ -58,7 +58,7 @@
                 width: calc((100% - 350px) - 2rem - 8rem);
             }
         &__buttons {
-            display: flex;
+            display: none;
             justify-content: space-between;
             width: 100%;
             
@@ -96,6 +96,56 @@
                 width: 100%;
                 height: 35rem;
                 padding: 2rem;
+            }
+
+            &__instruction {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #004379c2;
+                display: flex;
+                flex-direction: column;
+                gap: 6rem;
+                @include tablet {
+                    display: none;
+                }
+
+                &__container {
+                    padding: 5rem;
+                    border: solid 5px $secondary-color;
+                    border-radius: 20px;
+
+                    &__icon {
+                        scale: 5;
+                        animation: scroll 4s ease-in-out infinite;
+                    }
+
+                }
+
+                &__text {
+                    // border: none;
+                    // margin: 0;
+                    // padding: 0;
+                    height: auto;
+                    width: auto;
+                
+                    &__icon {
+                        scale: 4;
+                        color: #ca9f11;
+
+                        
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    }
+                }
             }
 
             &__content {
@@ -354,4 +404,32 @@
       70% {
         transform: translateY(0);
       }
+    }
+
+
+    
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+      }
+
+    20% {
+        transform: translateX(-20);
+      }
+  
+    40% {
+        transform: translateX(20);
+    }
+    
+    60% {
+        transform: translateX(-20);
+    }
+
+    80% {
+        transform: translateX(20);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
     }
