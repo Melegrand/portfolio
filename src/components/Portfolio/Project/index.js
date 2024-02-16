@@ -7,11 +7,11 @@ const Project = ({ data }) => {
     let startX;
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+        currentIndex !== data.length && setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
+        currentIndex !== data.length && setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
     };
 
     const currentProject = data[currentIndex];
@@ -28,9 +28,10 @@ const Project = ({ data }) => {
           const deltaX = endX - startX;
     
           if (deltaX > 50) {
-            handleNext()
-          } else if (deltaX < -50) {
             handlePrev()
+          } else if (deltaX < -50) {
+            handleNext()
+
           }
         };
     
