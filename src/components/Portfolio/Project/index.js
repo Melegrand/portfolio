@@ -28,7 +28,6 @@ const Project = ({ data }) => {
     
         const handleTouchStart = (event) => {
           startX = event.touches[0].clientX;
-          handleInstruction()
         };
     
         const handleTouchEnd = (event) => {
@@ -37,9 +36,10 @@ const Project = ({ data }) => {
     
           if (deltaX > 50) {
             handlePrev()
+            handleInstruction()
           } else if (deltaX < -50) {
             handleNext()
-
+            handleInstruction()
           }
         };
     
