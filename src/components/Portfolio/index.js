@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import Header from '../Header';
 import Project from './Project';
 import './index.scss';
-import SearchByTown from './miniatures/SearchByTown.png';
-import map from './miniatures/map.png';
-import ew from './miniatures/ew.png';
-import univinfo from './miniatures/univinfo.png';
-import pagination from './miniatures/pagination.png';
-import breadcrumb from './miniatures/breadcrumb.png';
-import puzzle from './miniatures/puzzle.png';
+import SearchByTown from './miniatures/SearchByTown.jpg';
+import map from './miniatures/map.jpg';
+import ew from './miniatures/ew.jpg';
+import univinfo from './miniatures/univinfo.jpg';
+import pagination from './miniatures/pagination.jpg';
+import breadcrumb from './miniatures/breadcrumb.jpg';
+import puzzle from './miniatures/puzzle.jpg';
 
 const Portfolio = ({getLocation, location, handleChangeLocation}) => {
     document.title = 'Portfolio | Mélody Legrand'
