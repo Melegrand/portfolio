@@ -63,9 +63,9 @@
         @include big {
             width: 500px;
             height: 500px;
-            bottom: 20vh;
             right: 51%;
-            top: auto;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         &__photo {
