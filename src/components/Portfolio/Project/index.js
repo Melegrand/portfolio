@@ -21,7 +21,7 @@ const Project = ({ data }) => {
                     &lsaquo;
                 </button>
 
-                <button className="next-buttonbutton--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>
+                <button className="next-button button--nav" onClick={handleNext} disabled={currentIndex === data.length - 1}>
                     &rsaquo;
                 </button>
             </div>
